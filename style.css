@@ -1,0 +1,128 @@
+/* ===== PAGE BACKGROUND ===== */
+body {
+    background-image: url("images/universe-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* ===== HERO SECTION ===== */
+.hero {
+    color: white;
+    text-align: center;
+}
+
+
+/* ===== PROFILE IMAGE ===== */
+.profile-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+.home-link {
+    color: #00bfff;
+}
+
+.navbar-brand .owusu {
+    color: #00bfff;
+}
+
+.hero p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== SECTION HEADINGS ===== */
+.section-title {
+    color: white;
+    text-align: center;
+}
+
+.blue-text {
+    color: #00bfff
+}
+
+/* ===== SkILLS CARDS ===== */
+.skill-card {
+    background-color: rgba(5, 20, 45, 0.85);
+    border: 1px solid #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    height: 110px;
+    padding: 6px;
+    width: 110px;
+    
+}
+
+/*===== PROJECTS CARDS ===== */
+.project-card {
+    background-color: rgba(5, 20, 45, 0.85);
+    border: 1px solid #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+    color: white;
+    border-radius: 10px;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    
+}
+ .logo-image {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .skill-card h3 {
+    margin: 4px 0 0;
+    font-size: 16px;
+ }
+
+ .skills-row {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .portfolio-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .project-image {
+    max-width: 90px;
+    max-height: auto;
+    
+ }
+
+ .project-page-card {
+    width:100%;
+    aspect-ratio: auto;
+    height: auto;
+ }
+
+ .about-card {
+     background-color: rgba(5, 20, 45, 0.85);
+     max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .projects-row {
+     max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+ }
