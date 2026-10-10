@@ -21,7 +21,9 @@ body {
 /* ===== PROFILE IMAGE ===== */
 .profile-image {
     width: 350px;
-    height: 350px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
     display: block;
