@@ -75,12 +75,45 @@ body {
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
     color: white;
     border-radius: 10px;
-    min-height: 180px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Lift and glow brighter on hover */
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+}
+
+/* Dark panel that holds the project image, same size on every card */
+.project-media {
+    background-color: #020a18;
+    height: 160px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    
-    
+    justify-content: center;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 191, 255, 0.4);
+}
+
+.project-card .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.project-card .card-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Small pill-shaped label, e.g. "Planned Project" */
+.project-status {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #00bfff;
+    border: 1px solid #00bfff;
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin-bottom: 10px;
 }
  .logo-image {
     width: 80px;
@@ -108,15 +141,34 @@ body {
  }
 
  .project-image {
-    max-width: 90px;
-    max-height: auto;
-    
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
  }
 
- .project-page-card {
-    width:100%;
-    aspect-ratio: auto;
-    height: auto;
+ /* Projects page: image on the left, text on the right on wider screens */
+ .project-card-wide .card-title {
+    font-size: 1.5rem;
+ }
+
+ @media (min-width: 768px) {
+    .project-card-wide .project-media {
+        width: 220px;
+        height: auto;
+        flex-shrink: 0;
+        border-bottom: none;
+        border-right: 1px solid rgba(0, 191, 255, 0.4);
+    }
+ }
+
+ /* Turn off the hover movement for people who prefer less motion */
+ @media (prefers-reduced-motion: reduce) {
+    .project-card {
+        transition: none;
+    }
+    .project-card:hover {
+        transform: none;
+    }
  }
 
  .about-card {
