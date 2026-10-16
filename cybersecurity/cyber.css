@@ -21,12 +21,34 @@ body {
     color: #00bfff !important;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION =====
+   Light background with a faint blue "digital grid", like graph paper or a
+   circuit board. Two gradients make 1px lines: one for rows, one (90deg)
+   for columns. background-size sets the size of each grid square. */
 .cyber-hero {
-    background-color: #05142d;
-    color: white;
+    background-color: #e8f0fb;
+    background-image:
+        linear-gradient(rgba(10, 88, 202, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 88, 202, 0.10) 1px, transparent 1px);
+    background-size: 32px 32px;
+    border-bottom: 3px solid #0a58ca;
+    color: #1b2433;
     text-align: center;
     padding: 60px 16px;
+}
+
+/* ===== CYBER-STYLE HEADINGS =====
+   Code-style font, like a computer terminal */
+.cyber-hero h1,
+.cyber-section h2 {
+    font-family: Consolas, "Courier New", monospace;
+    font-weight: bold;
+    color: #05142d;
+}
+
+/* Light blue (#00bfff) is too faint on a light background, so headings use the darker blue */
+.cyber-hero .accent-text {
+    color: #0a58ca;
 }
 
 .cyber-hero p {
@@ -49,22 +71,29 @@ body {
     margin-bottom: 24px;
 }
 
+/* Short blue line under each centered section heading */
+.cyber-section > h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #0a58ca;
+    margin: 10px auto 0;
+}
+
 /* ===== FBI STATISTIC BOX ===== */
 .stat-box {
-    background-color: #05142d;
-    color: white;
+    background-color: white;
+    border: 2px solid #0a58ca;
     border-radius: 10px;
     padding: 24px 16px;
 }
 
 .stat-number {
+    font-family: Consolas, "Courier New", monospace;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #00bfff;
-}
-
-.stat-box a {
-    color: #00bfff;
+    color: #0a58ca;
 }
 
 /* ===== TOPIC CARDS ===== */
@@ -235,10 +264,8 @@ body {
     .cyber-footer {
         display: none;
     }
-    /* Printers usually skip background colors, so white text would vanish */
     .cyber-hero {
         padding: 16px;
-        color: black;
     }
 }
 
@@ -251,14 +278,15 @@ body {
 
 /* ===== FOOTER ===== */
 .cyber-footer {
-    background-color: #05142d;
-    color: white;
+    background-color: #e8f0fb;
+    border-top: 3px solid #0a58ca;
+    color: #1b2433;
     text-align: center;
     padding: 20px 16px;
 }
 
 .cyber-footer a {
-    color: #00bfff;
+    color: #0a58ca;
 }
 
 /* Turn off the hover movement for people who prefer less motion */
