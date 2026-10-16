@@ -1,0 +1,121 @@
+/* ===== COLORS =====
+   Navy and blue match the portfolio. The darker blue (#0a58ca) is used
+   for text on white because light blue is hard to read on a white background. */
+
+/* ===== PAGE ===== */
+body {
+    background-color: #f4f7fb;
+    color: #1b2433;
+}
+
+/* ===== NAVIGATION ===== */
+.cyber-nav {
+    background-color: #05142d;
+}
+
+.accent-text {
+    color: #00bfff;
+}
+
+.portfolio-link {
+    color: #00bfff !important;
+}
+
+/* ===== HERO SECTION ===== */
+.cyber-hero {
+    background-color: #05142d;
+    color: white;
+    text-align: center;
+    padding: 60px 16px;
+}
+
+.cyber-hero p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.15rem;
+}
+
+/* ===== SECTIONS ===== */
+.cyber-section {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 16px 0;
+}
+
+.cyber-section h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* ===== FBI STATISTIC BOX ===== */
+.stat-box {
+    background-color: #05142d;
+    color: white;
+    border-radius: 10px;
+    padding: 24px 16px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00bfff;
+}
+
+.stat-box a {
+    color: #00bfff;
+}
+
+/* ===== TOPIC CARDS ===== */
+.topic-card {
+    border: 1px solid #d6e0ee;
+    border-top: 5px solid #0a58ca;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(5, 20, 45, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Lift slightly on hover, like the portfolio project cards */
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(5, 20, 45, 0.15);
+}
+
+.topic-icon {
+    font-size: 2.5rem;
+}
+
+/* ===== "DO THIS TODAY" CHECKLIST ===== */
+.today-list li {
+    margin-bottom: 8px;
+}
+
+/* ===== SOURCES LIST ===== */
+/* Long URLs wrap onto the next line instead of running off small screens */
+.source-url {
+    color: #0a58ca;
+    overflow-wrap: anywhere;
+}
+
+/* ===== FOOTER ===== */
+.cyber-footer {
+    background-color: #05142d;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+}
+
+.cyber-footer a {
+    color: #00bfff;
+}
+
+/* Turn off the hover movement for people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    .topic-card {
+        transition: none;
+    }
+    .topic-card:hover {
+        transform: none;
+    }
+}
