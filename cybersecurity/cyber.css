@@ -173,6 +173,48 @@ body {
     padding-left: 10px;
 }
 
+/* ===== MFA PAGE ===== */
+/* The 3 steps in "How MFA Stops Criminals" */
+.flow-step {
+    background-color: white;
+    border: 1px solid #d6e0ee;
+    border-radius: 10px;
+    padding: 16px;
+    height: 100%;
+}
+
+/* Last step is green to show the account stayed safe */
+.flow-step-safe {
+    border: 2px solid #198754;
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    color: #0a58ca;
+}
+
+/* Ranked MFA methods: the colored left border shows how strong each one is */
+.method-item {
+    background-color: white;
+    border-left: 6px solid;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(5, 20, 45, 0.08);
+}
+
+.method-best {
+    border-left-color: #198754;
+}
+
+.method-good {
+    border-left-color: #0a58ca;
+}
+
+.method-ok {
+    border-left-color: #ffc107;
+}
+
 /* ===== SOURCES LIST ===== */
 /* Long URLs wrap onto the next line instead of running off small screens */
 .source-url {
