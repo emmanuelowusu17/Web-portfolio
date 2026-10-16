@@ -91,6 +91,63 @@ body {
     margin-bottom: 8px;
 }
 
+/* ===== PHISHING PAGE ===== */
+/* Keeps intro paragraphs from stretching too wide to read comfortably */
+.section-intro {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Boxes for the "common stories scammers use" */
+.trick-item {
+    background-color: white;
+    border-left: 4px solid #b02a37;
+    border-radius: 6px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 6px rgba(5, 20, 45, 0.08);
+}
+
+/* The fake example email */
+.email-sample {
+    border: 2px dashed #b02a37;
+}
+
+/* Numbered red circles that mark each red flag in the email */
+.flag-badge {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    background-color: #b02a37;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Looks like a button, but is just text so nobody can click it */
+.fake-button {
+    display: inline-block;
+    background-color: #b02a37; /* dark enough for white text to pass WAVE */
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.fake-url {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #b02a37;
+    overflow-wrap: anywhere;
+}
+
+.flag-list li {
+    margin-bottom: 10px;
+}
+
 /* ===== SOURCES LIST ===== */
 /* Long URLs wrap onto the next line instead of running off small screens */
 .source-url {
