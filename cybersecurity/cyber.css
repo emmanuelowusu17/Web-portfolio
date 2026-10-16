@@ -215,6 +215,33 @@ body {
     border-left-color: #ffc107;
 }
 
+/* ===== RESOURCES PAGE ===== */
+/* Each checklist group (Phishing, Passwords, MFA, Bonus) */
+.checklist-group {
+    background-color: white;
+    border: 1px solid #d6e0ee;
+    border-top: 5px solid #0a58ca;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.checklist-group .form-check {
+    margin-bottom: 8px;
+}
+
+/* When printing, hide the navbar and footer so only the content prints */
+@media print {
+    #nav-placeholder,
+    .cyber-footer {
+        display: none;
+    }
+    /* Printers usually skip background colors, so white text would vanish */
+    .cyber-hero {
+        padding: 16px;
+        color: black;
+    }
+}
+
 /* ===== SOURCES LIST ===== */
 /* Long URLs wrap onto the next line instead of running off small screens */
 .source-url {

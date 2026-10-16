@@ -21,7 +21,117 @@
             <!-- Hero Section -->
             <section class="cyber-hero">
                 <h1>Resources</h1>
-                <p>The trusted sources used to research and verify the information on this site.</p>
+                <p>Your safety checklist, where to report scams, and the trusted sources behind this site.</p>
+            </section>
+
+            <!-- Safety Checklist -->
+            <section class="cyber-section">
+                <h2>Your Safety Checklist</h2>
+                <p class="section-intro text-center">
+                    Check off each step as you finish it. Want a paper copy? Press <kbd>Ctrl</kbd> + <kbd>P</kbd>
+                    (or <kbd>Cmd</kbd> + <kbd>P</kbd> on a Mac) to print this page.
+                </p>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">🎣 Phishing</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check1">
+                                <label class="form-check-label" for="check1">I stop and check the sender before clicking any link.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check2">
+                                <label class="form-check-label" for="check2">I go to a company's website or app myself instead of using links in messages.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check3">
+                                <label class="form-check-label" for="check3">I report suspicious messages, then delete them.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">🔑 Passwords</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check4">
+                                <label class="form-check-label" for="check4">My passwords are at least 16 characters long.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check5">
+                                <label class="form-check-label" for="check5">I use a different password for every account.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check6">
+                                <label class="form-check-label" for="check6">I use a password manager.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">📱 MFA</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check7">
+                                <label class="form-check-label" for="check7">MFA is on for my email.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check8">
+                                <label class="form-check-label" for="check8">MFA is on for my bank, school, and social media accounts.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check9">
+                                <label class="form-check-label" for="check9">I never share MFA codes with anyone.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">⭐ Bonus Step</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check10">
+                                <label class="form-check-label" for="check10">I install software updates on my phone and computer right away, or turn on automatic updates.</label>
+                            </div>
+                            <p class="small mt-2 mb-0">Updates fix security flaws criminals could use to get into your files or accounts.</p>
+                        </fieldset>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Where to Report -->
+            <section class="cyber-section">
+                <h2>Where to Report</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered bg-white align-middle">
+                        <caption>Reporting helps protect other people from the same scam.</caption>
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">If you got...</th>
+                                <th scope="col">Report it here</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A phishing email</td>
+                                <td>Forward it to <strong>reportphishing@apwg.org</strong></td>
+                            </tr>
+                            <tr>
+                                <td>A phishing text message</td>
+                                <td>Forward it to <strong>SPAM (7726)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Any scam or fraud</td>
+                                <td><a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener">ReportFraud.ftc.gov</a> (Federal Trade Commission)</td>
+                            </tr>
+                            <tr>
+                                <td>Your personal information stolen</td>
+                                <td><a href="https://www.identitytheft.gov" target="_blank" rel="noopener">IdentityTheft.gov</a> (step-by-step recovery plan)</td>
+                            </tr>
+                            <tr>
+                                <td>An internet crime that cost you money</td>
+                                <td><a href="https://www.ic3.gov" target="_blank" rel="noopener">IC3.gov</a> (FBI Internet Crime Complaint Center)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <!-- Sources -->
@@ -30,22 +140,22 @@
                 <div class="list-group source-list">
                     <a href="https://www.cisa.gov/secure-our-world" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
                         <h3 class="h5 mb-1">Cybersecurity and Infrastructure Security Agency (CISA): Secure Our World</h3>
-                        <p class="mb-1">Simple steps for staying safe online: recognize phishing, use strong passwords, and turn on MFA.</p>
+                        <p class="mb-1">Simple steps for staying safe online: recognize phishing, use strong passwords, turn on MFA, and update software. Used on every page of this site.</p>
                         <small class="source-url">https://www.cisa.gov/secure-our-world</small>
                     </a>
                     <a href="https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
                         <h3 class="h5 mb-1">Federal Trade Commission (FTC): How to Recognize and Avoid Phishing Scams</h3>
-                        <p class="mb-1">Warning signs of phishing emails and texts, and what to do if you get one.</p>
+                        <p class="mb-1">Warning signs of phishing emails and texts, and what to do if you get one. Used on the Phishing page and for where to report.</p>
                         <small class="source-url">https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams</small>
                     </a>
                     <a href="https://pages.nist.gov/800-63-4/" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
                         <h3 class="h5 mb-1">National Institute of Standards and Technology (NIST): Digital Identity Guidelines</h3>
-                        <p class="mb-1">Official U.S. guidance on passwords and multifactor authentication.</p>
+                        <p class="mb-1">Official U.S. guidance on passwords and multifactor authentication. Used for the password myths and the MFA method ranking.</p>
                         <small class="source-url">https://pages.nist.gov/800-63-4/</small>
                     </a>
                     <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
                         <h3 class="h5 mb-1">FBI Internet Crime Complaint Center (IC3): 2025 Internet Crime Report</h3>
-                        <p class="mb-1">Data on internet crime complaints and losses reported to the FBI.</p>
+                        <p class="mb-1">Data on internet crime complaints and losses reported to the FBI. Used for the phishing loss statistic on the Home page.</p>
                         <small class="source-url">https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf</small>
                     </a>
                 </div>
