@@ -119,6 +119,18 @@ body {
     padding: 2px 10px;
     margin-bottom: 10px;
 }
+ /* "Visit the site" button on project cards: outlined in the portfolio's blue */
+ .project-btn {
+    color: #00bfff;
+    border: 1px solid #00bfff;
+ }
+
+ .project-btn:hover,
+ .project-btn:focus {
+    background-color: #00bfff;
+    color: #05142d;
+ }
+
  /* Same height for every logo so the labels line up */
  .logo-image {
     height: 60px;
