@@ -148,6 +148,31 @@ body {
     margin-bottom: 10px;
 }
 
+/* ===== PASSWORDS PAGE ===== */
+/* Monospace font so every character in the example passwords is easy to see */
+.password-example {
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+/* Myth vs. fact boxes: red stripe for the myth, green for the fact */
+.myth-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(5, 20, 45, 0.08);
+}
+
+.myth {
+    border-left: 4px solid #b02a37;
+    padding-left: 10px;
+}
+
+.fact {
+    border-left: 4px solid #198754;
+    padding-left: 10px;
+}
+
 /* ===== SOURCES LIST ===== */
 /* Long URLs wrap onto the next line instead of running off small screens */
 .source-url {
