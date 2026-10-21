@@ -2,7 +2,9 @@
 <html lang="en">
     <head>
         <title>Resources | Cybersecurity Awareness Hub</title>
+        <!-- utf-8 lets emoji and special symbols display correctly -->
         <meta charset="utf-8">
+        <!-- Makes the page fit the width of phone screens instead of zooming out -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Using bootstrap 5 framework-->
@@ -11,12 +13,18 @@
         <!-- Custom CSS for the cybersecurity site -->
         <link rel="stylesheet" href="cyber.css">
 
+        <!-- Bootstrap's JavaScript runs the interactive parts, like the mobile menu button -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery is used at the bottom of the page to load the shared navbar -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     </head>
+    <!-- d-flex, flex-column, and min-vh-100 make the body at least as tall as the screen,
+         so the footer stays at the bottom even when a page is short -->
     <body class="d-flex flex-column min-vh-100">
+        <!-- Empty box that the navbar from nav.html gets loaded into (see the script at the bottom) -->
         <div id="nav-placeholder"></div>
 
+        <!-- flex-grow-1 lets the main content stretch to fill extra space, pushing the footer down -->
         <main class="flex-grow-1">
             <!-- Hero Section -->
             <section class="cyber-hero">
@@ -28,9 +36,15 @@
             <section class="cyber-section">
                 <h2>Your Safety Checklist</h2>
                 <p class="section-intro text-center">
+                    <!-- <kbd> styles text to look like a keyboard key -->
                     Check off each step as you finish it. Want a paper copy? Press <kbd>Ctrl</kbd> + <kbd>P</kbd>
                     (or <kbd>Cmd</kbd> + <kbd>P</kbd> on a Mac) to print this page.
                 </p>
+                <!-- Each group is a <fieldset> with a <legend> title, so screen readers know
+                     which group a checkbox belongs to.
+                     Each label's "for" matches its checkbox's "id", so clicking the text
+                     also checks the box.
+                     Note: checkmarks reset when the page reloads. Saving them would need JavaScript. -->
                 <div class="row g-4">
                     <div class="col-md-6">
                         <fieldset class="checklist-group h-100">
@@ -99,6 +113,9 @@
             <!-- Where to Report -->
             <section class="cyber-section">
                 <h2>Where to Report</h2>
+                <!-- table-responsive lets the table scroll sideways on small screens instead of squishing.
+                     The caption describes the table, and scope="col" tells screen readers
+                     that each header labels the column below it. -->
                 <div class="table-responsive">
                     <table class="table table-bordered bg-white align-middle">
                         <caption>Reporting helps protect other people from the same scam.</caption>
@@ -137,6 +154,8 @@
             <!-- Sources -->
             <section class="cyber-section">
                 <h2>Sources</h2>
+                <!-- Each source is a whole clickable box. list-group-item-action adds a
+                     hover highlight so it looks clickable. -->
                 <div class="list-group source-list">
                     <a href="https://www.cisa.gov/secure-our-world" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
                         <h3 class="h5 mb-1">Cybersecurity and Infrastructure Security Agency (CISA): Secure Our World</h3>
@@ -168,6 +187,10 @@
         </footer>
 
         <script>
+            // Copy nav.html into the empty nav-placeholder div at the top of the page.
+            // This way all 5 pages share one navbar, so a menu change only happens in one file.
+            // Note: this needs a web server (like GitHub Pages or VS Code Live Server).
+            // The navbar may not show up if you just double-click the HTML file.
             $("#nav-placeholder").load("nav.html");
         </script>
     </body>

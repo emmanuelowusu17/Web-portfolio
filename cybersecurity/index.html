@@ -2,7 +2,9 @@
 <html lang="en">
     <head>
         <title>Stay Safe Online | Cybersecurity Awareness Hub</title>
+        <!-- utf-8 lets emoji and special symbols display correctly -->
         <meta charset="utf-8">
+        <!-- Makes the page fit the width of phone screens instead of zooming out -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Using bootstrap 5 framework-->
@@ -11,12 +13,18 @@
         <!-- Custom CSS for the cybersecurity site -->
         <link rel="stylesheet" href="cyber.css">
 
+        <!-- Bootstrap's JavaScript runs the interactive parts, like the mobile menu button -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery is used at the bottom of the page to load the shared navbar -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     </head>
+    <!-- d-flex, flex-column, and min-vh-100 make the body at least as tall as the screen,
+         so the footer stays at the bottom even when a page is short -->
     <body class="d-flex flex-column min-vh-100">
+        <!-- Empty box that the navbar from nav.html gets loaded into (see the script at the bottom) -->
         <div id="nav-placeholder"></div>
 
+        <!-- flex-grow-1 lets the main content stretch to fill extra space, pushing the footer down -->
         <main class="flex-grow-1">
             <!-- Hero Section -->
             <section class="cyber-hero">
@@ -35,6 +43,9 @@
                     Phishing messages and weak passwords are two of the most common ways criminals
                     break into accounts. Once they get in, they can:
                 </p>
+                <!-- Bootstrap grid: a row is split into 12 columns. col-md-4 takes 4 of them,
+                     so 3 boxes fit side by side on medium screens and up. On phones they stack.
+                     g-3 adds space between boxes, and h-100 makes them all the same height. -->
                 <div class="row g-3 text-center">
                     <div class="col-md-4">
                         <div class="alert alert-danger h-100 mb-0">
@@ -56,7 +67,9 @@
                     </div>
                 </div>
 
-                <!-- Real statistic from the FBI report -->
+                <!-- Real statistic from the FBI report.
+                     target="_blank" opens the link in a new tab, and rel="noopener"
+                     stops that new tab from being able to control this page. -->
                 <div class="stat-box text-center mt-4">
                     <p class="stat-number mb-1">$215,843,126</p>
                     <p class="mb-1">lost to phishing and spoofing scams in 2025, based on complaints reported to the FBI.</p>
@@ -67,6 +80,10 @@
             <!-- Topic Cards -->
             <section class="cyber-section">
                 <h2>What You'll Learn</h2>
+                <!-- d-flex flex-column on the card body plus mt-auto on the button pushes each
+                     button to the bottom, so they line up even if the text lengths differ.
+                     aria-hidden="true" hides the decorative emoji from screen readers,
+                     so they don't read out "fishing pole" before the heading. -->
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="card topic-card h-100">
@@ -101,7 +118,8 @@
                 </div>
             </section>
 
-            <!-- Do This Today -->
+            <!-- Do This Today.
+                 The heading is an h2 for page structure, but class="h4" makes it look smaller. -->
             <section class="cyber-section">
                 <div class="alert alert-primary">
                     <h2 class="h4 text-start">3 Things You Can Do Today</h2>
@@ -120,6 +138,10 @@
         </footer>
 
         <script>
+            // Copy nav.html into the empty nav-placeholder div at the top of the page.
+            // This way all 5 pages share one navbar, so a menu change only happens in one file.
+            // Note: this needs a web server (like GitHub Pages or VS Code Live Server).
+            // The navbar may not show up if you just double-click the HTML file.
             $("#nav-placeholder").load("nav.html");
         </script>
     </body>

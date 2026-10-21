@@ -1,8 +1,14 @@
+<!-- Shared navbar for every page. Each page loads this file with jQuery.
+     navbar-expand-md: shows the full menu on medium and larger screens,
+     and folds it into a button on phones.
+     navbar-dark: uses light text so it shows up on the dark navy background. -->
 <nav class="navbar navbar-expand-md navbar-dark cyber-nav"
    role="navigation" aria-label="Cybersecurity site navigation">
 
    <div class="container">
        <a class="navbar-brand" href="index.html">Stay Safe <span class="accent-text">Online</span></a>
+       <!-- "Hamburger" menu button that only appears on small screens.
+            data-bs-target="#cyber-menu" tells Bootstrap which menu to open and close. -->
        <button class="navbar-toggler" type="button"
            data-bs-toggle="collapse"
            data-bs-target="#cyber-menu"
@@ -13,12 +19,14 @@
            <span class="navbar-toggler-icon"></span>
        </button>
        <div id="cyber-menu" class="collapse navbar-collapse">
+           <!-- ms-auto (margin-start: auto) pushes the links to the right side -->
            <div class="navbar-nav ms-auto">
                <a class="nav-link" href="index.html">Home</a>
                <a class="nav-link" href="phishing.html">Phishing</a>
                <a class="nav-link" href="passwords.html">Passwords</a>
                <a class="nav-link" href="mfa.html">MFA</a>
                <a class="nav-link" href="resources.html">Resources</a>
+               <!-- "../" goes up one folder, back to the main portfolio. &larr; draws a left arrow. -->
                <a class="nav-link portfolio-link" href="../index.html">&larr; Portfolio</a>
            </div>
        </div>
