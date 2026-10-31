@@ -1,0 +1,35 @@
+<!-- Shared navbar for every toolkit page. Each page loads this file with jQuery.
+     navbar-expand-lg: shows the full menu on large screens, and folds it into
+     a button on phones and tablets (this menu has more links than the cyber site).
+     navbar-dark: uses light text so it shows up on the dark navy background. -->
+<nav class="navbar navbar-expand-lg navbar-dark toolkit-nav"
+   role="navigation" aria-label="Developer toolkit navigation">
+
+   <div class="container">
+       <a class="navbar-brand" href="index.html">Developer <span class="accent-text">Toolkit</span></a>
+       <!-- "Hamburger" menu button that only appears on smaller screens.
+            data-bs-target="#toolkit-menu" tells Bootstrap which menu to open and close. -->
+       <button class="navbar-toggler" type="button"
+           data-bs-toggle="collapse"
+           data-bs-target="#toolkit-menu"
+           aria-controls="toolkit-menu"
+           aria-expanded="false"
+           aria-label="Toggle navigation">
+
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div id="toolkit-menu" class="collapse navbar-collapse">
+           <!-- ms-auto (margin-start: auto) pushes the links to the right side -->
+           <div class="navbar-nav ms-auto">
+               <a class="nav-link" href="index.html">Home</a>
+               <a class="nav-link" href="html-basics.html">HTML</a>
+               <a class="nav-link" href="css-basics.html">CSS</a>
+               <a class="nav-link" href="bootstrap-basics.html">Bootstrap</a>
+               <a class="nav-link" href="git-github.html">Git &amp; GitHub</a>
+               <a class="nav-link" href="resources.html">Resources</a>
+               <!-- "../" goes up one folder, back to the main portfolio. &larr; draws a left arrow. -->
+               <a class="nav-link portfolio-link" href="../index.html">&larr; Portfolio</a>
+           </div>
+       </div>
+   </div>
+</nav>

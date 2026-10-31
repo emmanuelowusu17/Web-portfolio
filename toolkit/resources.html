@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Resources | Beginner Developer Toolkit</title>
+        <!-- utf-8 lets emoji and special symbols display correctly -->
+        <meta charset="utf-8">
+        <!-- Makes the page fit the width of phone screens instead of zooming out -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Using bootstrap 5 framework-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS for the toolkit site -->
+        <link rel="stylesheet" href="toolkit.css">
+
+        <!-- Bootstrap's JavaScript runs the interactive parts, like the mobile menu button -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery is used at the bottom of the page to load the shared navbar -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <!-- d-flex, flex-column, and min-vh-100 make the body at least as tall as the screen,
+         so the footer stays at the bottom even when a page is short -->
+    <body class="d-flex flex-column min-vh-100">
+        <!-- Empty box that the navbar from nav.html gets loaded into (see the script at the bottom) -->
+        <div id="nav-placeholder"></div>
+
+        <!-- flex-grow-1 lets the main content stretch to fill extra space, pushing the footer down -->
+        <main class="flex-grow-1">
+            <!-- Hero Section -->
+            <section class="toolkit-hero">
+                <h1>Resources</h1>
+                <p>Your beginner checklist, project ideas to practice with, and free places to keep learning.</p>
+            </section>
+
+            <!-- Beginner Checklist -->
+            <section class="toolkit-section">
+                <h2>Your Beginner Checklist</h2>
+                <!-- <kbd> styles text to look like a keyboard key -->
+                <p class="section-intro text-center">
+                    Check off each skill as you learn it. Want a paper copy? Press <kbd>Ctrl</kbd> + <kbd>P</kbd>
+                    (or <kbd>Cmd</kbd> + <kbd>P</kbd> on a Mac) to print this page.
+                </p>
+                <!-- Each group is a <fieldset> with a <legend> title, so screen readers know
+                     which group a checkbox belongs to.
+                     Each label's "for" matches its checkbox's "id", so clicking the text
+                     also checks the box.
+                     Note: checkmarks reset when the page reloads. Saving them would need JavaScript. -->
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">🛠️ Setup</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check1">
+                                <label class="form-check-label" for="check1">I installed VS Code and the Live Server extension.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check2">
+                                <label class="form-check-label" for="check2">I installed Git and made a GitHub account.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">🧱 HTML</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check3">
+                                <label class="form-check-label" for="check3">I can write the basic page structure from memory.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check4">
+                                <label class="form-check-label" for="check4">I can add headings, paragraphs, links, lists, and images with alt text.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">🎨 CSS</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check5">
+                                <label class="form-check-label" for="check5">I can link a CSS file and style elements with classes.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check6">
+                                <label class="form-check-label" for="check6">I understand margin, border, padding, and content.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">🛋️ Bootstrap</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check7">
+                                <label class="form-check-label" for="check7">I can build a layout with container, row, and col classes.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check8">
+                                <label class="form-check-label" for="check8">I used a card, a button, and a navbar from the Bootstrap docs.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="checklist-group h-100">
+                            <legend class="h5">☁️ Git &amp; GitHub</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check9">
+                                <label class="form-check-label" for="check9">I made a commit with a clear message.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check10">
+                                <label class="form-check-label" for="check10">I pushed a project to GitHub.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check11">
+                                <label class="form-check-label" for="check11">I published a site with GitHub Pages.</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Projects. Bootstrap grid: 1 card per row on phones, 2 on medium, 3 on large.
+                 aria-hidden="true" hides the decorative emoji from screen readers. -->
+            <section class="toolkit-section">
+                <h2>Practice Project Ideas</h2>
+                <p class="section-intro text-center">The best way to learn is to build. Start small, then add to it.</p>
+                <div class="row g-4 text-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <span class="topic-icon" aria-hidden="true">🙋</span>
+                                <h3 class="h5">About Me page</h3>
+                                <p class="mb-0">One page with your photo, a short bio, and a list of your hobbies. Uses HTML and CSS.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <span class="topic-icon" aria-hidden="true">🍲</span>
+                                <h3 class="h5">Favorite recipe</h3>
+                                <p class="mb-0">A recipe with an ingredient list, numbered steps, and a photo. Practices lists and images.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <span class="topic-icon" aria-hidden="true">💼</span>
+                                <h3 class="h5">Portfolio site</h3>
+                                <p class="mb-0">A multi-page site with a Bootstrap navbar and project cards, published with GitHub Pages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sources. Each source is a whole clickable box. list-group-item-action adds a
+                 hover highlight so it looks clickable.
+                 target="_blank" opens the link in a new tab, and rel="noopener"
+                 stops that new tab from being able to control this page. -->
+            <section class="toolkit-section">
+                <h2>Keep Learning: Free Sources</h2>
+                <div class="list-group">
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+                        <h3 class="h5 mb-1">MDN Web Docs: Learn Web Development</h3>
+                        <p class="mb-1">Free lessons on HTML and CSS from Mozilla, the makers of Firefox. Used for the HTML and CSS pages.</p>
+                        <small class="source-url">https://developer.mozilla.org/en-US/docs/Learn_web_development</small>
+                    </a>
+                    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+                        <h3 class="h5 mb-1">Bootstrap 5.3 Documentation</h3>
+                        <p class="mb-1">The official guide, with copy-and-paste examples of every component. Used for the Bootstrap page.</p>
+                        <small class="source-url">https://getbootstrap.com/docs/5.3/getting-started/introduction/</small>
+                    </a>
+                    <a href="https://git-scm.com/book/en/v2" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+                        <h3 class="h5 mb-1">Pro Git (free book)</h3>
+                        <p class="mb-1">The official Git book, free to read online. Chapters 1 and 2 cover everything a beginner needs. Used for the Git page.</p>
+                        <small class="source-url">https://git-scm.com/book/en/v2</small>
+                    </a>
+                    <a href="https://docs.github.com/en/get-started" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+                        <h3 class="h5 mb-1">GitHub Docs: Get Started</h3>
+                        <p class="mb-1">GitHub's official guide to repositories, commits, and pushing your code. Used for the GitHub section.</p>
+                        <small class="source-url">https://docs.github.com/en/get-started</small>
+                    </a>
+                    <a href="https://docs.github.com/en/pages/quickstart" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+                        <h3 class="h5 mb-1">GitHub Pages Quickstart</h3>
+                        <p class="mb-1">Step-by-step directions for publishing a website from a GitHub repository. Used for the publishing steps.</p>
+                        <small class="source-url">https://docs.github.com/en/pages/quickstart</small>
+                    </a>
+                    <a href="https://www.freecodecamp.org/" class="list-group-item list-group-item-action" target="_blank" rel="noopener">
+                        <h3 class="h5 mb-1">freeCodeCamp</h3>
+                        <p class="mb-1">Free hands-on coding lessons and projects you complete in the browser. A good next step after this toolkit.</p>
+                        <small class="source-url">https://www.freecodecamp.org/</small>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="toolkit-footer mt-5">
+            <p class="mb-1">Information based on MDN Web Docs, the Bootstrap documentation, Pro Git, and GitHub Docs.</p>
+            <p class="mb-0">&copy; 2026 Emmanuel Owusu</p>
+        </footer>
+
+        <script>
+            // Copy nav.html into the empty nav-placeholder div at the top of the page.
+            // This way all 6 pages share one navbar, so a menu change only happens in one file.
+            // Note: this needs a web server (like GitHub Pages or VS Code Live Server).
+            // The navbar may not show up if you just double-click the HTML file.
+            $("#nav-placeholder").load("nav.html");
+        </script>
+    </body>
+</html>

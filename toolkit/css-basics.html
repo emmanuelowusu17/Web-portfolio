@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learn CSS | Beginner Developer Toolkit</title>
+        <!-- utf-8 lets emoji and special symbols display correctly -->
+        <meta charset="utf-8">
+        <!-- Makes the page fit the width of phone screens instead of zooming out -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Using bootstrap 5 framework-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS for the toolkit site -->
+        <link rel="stylesheet" href="toolkit.css">
+
+        <!-- Bootstrap's JavaScript runs the interactive parts, like the mobile menu button -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery is used at the bottom of the page to load the shared navbar -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <!-- d-flex, flex-column, and min-vh-100 make the body at least as tall as the screen,
+         so the footer stays at the bottom even when a page is short -->
+    <body class="d-flex flex-column min-vh-100">
+        <!-- Empty box that the navbar from nav.html gets loaded into (see the script at the bottom) -->
+        <div id="nav-placeholder"></div>
+
+        <!-- flex-grow-1 lets the main content stretch to fill extra space, pushing the footer down -->
+        <main class="flex-grow-1">
+            <!-- Hero Section -->
+            <section class="toolkit-hero">
+                <p class="hero-tag">Step 2 of 4</p>
+                <h1>Style It with <span class="accent-text">CSS</span></h1>
+                <p>CSS controls how your page looks: the colors, fonts, spacing, and layout.</p>
+            </section>
+
+            <!-- What Is CSS -->
+            <section class="toolkit-section">
+                <h2>What Is CSS?</h2>
+                <p class="section-intro">
+                    CSS stands for <strong>Cascading Style Sheets</strong>. HTML decides <em>what</em> is on
+                    the page, and CSS decides <em>how it looks</em>. You write your styles in a separate
+                    file that ends in <code>.css</code>, then connect it to your HTML page with a
+                    <code>&lt;link&gt;</code> tag inside <code>&lt;head&gt;</code>:
+                </p>
+                <!-- CODE EXAMPLES: <pre> keeps the spaces and line breaks exactly as typed.
+                     &lt; and &gt; are codes for the less-than and greater-than symbols, so the
+                     browser shows the example as text instead of running it as real HTML.
+                     tabindex="0" lets keyboard users reach the box and scroll long lines sideways. -->
+                <div class="code-label">index.html</div>
+                <pre class="code-block" tabindex="0"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+                <p class="section-intro mt-3 mb-0">
+                    "Cascading" means that when two rules style the same thing, the one that comes
+                    <strong>later</strong> (or is more specific) wins. That's why your own CSS file
+                    should be linked <em>after</em> Bootstrap.
+                </p>
+            </section>
+
+            <!-- Anatomy of a CSS Rule -->
+            <section class="toolkit-section">
+                <h2>The Parts of a CSS Rule</h2>
+                <!-- col-lg-6 + col-lg-6 = 12: the code and its explanation sit side by side on large screens -->
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="code-label">style.css</div>
+<pre class="code-block" tabindex="0"><code>h1 {
+    color: navy;
+    font-size: 40px;
+}</code></pre>
+                        <!-- The <pre> above starts at the left edge on purpose: anything before
+                             its first line of code would show up as extra spaces -->
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="mb-0">
+                            <li class="mb-2"><strong>Selector</strong> (<code>h1</code>): which elements to style.</li>
+                            <li class="mb-2"><strong>Curly braces</strong> (<code>{ }</code>): hold all the styles for that selector.</li>
+                            <li class="mb-2"><strong>Property</strong> (<code>color</code>): what you want to change.</li>
+                            <li class="mb-2"><strong>Value</strong> (<code>navy</code>): what to change it to.</li>
+                            <li><strong>Semicolon</strong> (<code>;</code>): ends each line. Forgetting one is the most common CSS mistake.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selectors.
+                 table-responsive lets the table scroll sideways on small screens instead of squishing.
+                 The caption describes the table, and scope="col" tells screen readers
+                 that each header labels the column below it. -->
+            <section class="toolkit-section">
+                <h2>Choosing What to Style: Selectors</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered bg-white align-middle">
+                        <caption>The three selectors you'll use most.</caption>
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Selector</th>
+                                <th scope="col">In the CSS</th>
+                                <th scope="col">In the HTML</th>
+                                <th scope="col">What it styles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Element</td>
+                                <td><code>p { }</code></td>
+                                <td><code>&lt;p&gt;</code></td>
+                                <td>Every paragraph on the page</td>
+                            </tr>
+                            <tr>
+                                <td>Class (starts with a dot)</td>
+                                <td><code>.card { }</code></td>
+                                <td><code>&lt;div class="card"&gt;</code></td>
+                                <td>Every element with that class. You can reuse a class many times.</td>
+                            </tr>
+                            <tr>
+                                <td>ID (starts with #)</td>
+                                <td><code>#header { }</code></td>
+                                <td><code>&lt;div id="header"&gt;</code></td>
+                                <td>One single element. Each ID can only be used once per page.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="section-intro text-center mb-0">
+                    <strong>Tip:</strong> use classes for most of your styling. They're reusable and easy to manage.
+                </p>
+            </section>
+
+            <!-- Common Properties: same table pattern as above -->
+            <section class="toolkit-section">
+                <h2>Common CSS Properties</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered bg-white align-middle">
+                        <caption>Properties you'll use on almost every page.</caption>
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Property</th>
+                                <th scope="col">What it changes</th>
+                                <th scope="col">Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>color</code></td>
+                                <td>Text color</td>
+                                <td><code>color: #05142d;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>background-color</code></td>
+                                <td>The color behind an element</td>
+                                <td><code>background-color: white;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>font-family</code></td>
+                                <td>The font. List backups in case the first isn't installed.</td>
+                                <td><code>font-family: Arial, sans-serif;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>font-size</code></td>
+                                <td>Text size</td>
+                                <td><code>font-size: 18px;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>text-align</code></td>
+                                <td>Lines up text left, right, or center</td>
+                                <td><code>text-align: center;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>padding</code></td>
+                                <td>Space <em>inside</em> an element, around its content</td>
+                                <td><code>padding: 16px;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>margin</code></td>
+                                <td>Space <em>outside</em> an element, between it and its neighbors</td>
+                                <td><code>margin: 24px;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>border</code></td>
+                                <td>A line around an element: its width, style, and color</td>
+                                <td><code>border: 2px solid blue;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>border-radius</code></td>
+                                <td>Rounds the corners</td>
+                                <td><code>border-radius: 10px;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Box Model.
+                 The diagram is four nested divs, each one inside the last, styled in
+                 toolkit.css (.bm-margin, .bm-border, .bm-padding, .bm-content).
+                 <figure> and <figcaption> group a picture with the sentence that describes it. -->
+            <section class="toolkit-section">
+                <h2>The Box Model</h2>
+                <p class="section-intro text-center">
+                    The browser treats every element as a box made of four layers, from the inside out:
+                </p>
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <figure class="mb-0">
+                            <div class="bm-margin">
+                                <span class="bm-label">margin</span>
+                                <div class="bm-border">
+                                    <span class="bm-label">border</span>
+                                    <div class="bm-padding">
+                                        <span class="bm-label">padding</span>
+                                        <div class="bm-content">content</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figcaption class="small text-center mt-2">The four layers of the CSS box model.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <ol class="mb-0">
+                            <li class="mb-2"><strong>Content:</strong> the text or image itself.</li>
+                            <li class="mb-2"><strong>Padding:</strong> space between the content and the border.</li>
+                            <li class="mb-2"><strong>Border:</strong> the line around the padding.</li>
+                            <li><strong>Margin:</strong> space outside the border that pushes other elements away.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Try It Yourself: a full example that puts the lessons together -->
+            <section class="toolkit-section">
+                <h2>Try It Yourself</h2>
+                <p class="section-intro text-center">
+                    Create a file called <code>style.css</code> next to your <code>index.html</code>,
+                    link it, and paste this in. Then change the values and watch what happens.
+                </p>
+                <div class="code-label">style.css</div>
+<pre class="code-block" tabindex="0"><code>/* This is a CSS comment. The browser ignores it. */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+}
+
+h1 {
+    color: #05142d;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    border: 2px solid #0a58ca;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 24px;
+}</code></pre>
+            </section>
+
+            <!-- Developer Tools tip. alert-info is Bootstrap's light blue message box. -->
+            <section class="toolkit-section">
+                <div class="alert alert-info mb-0">
+                    <strong>Use your browser's Developer Tools.</strong> Right-click anything on a page and
+                    choose <strong>Inspect</strong>. You'll see its HTML and CSS, and you can change the
+                    styles live to test ideas. Nothing you change there is saved, so you can't break anything.
+                </div>
+            </section>
+
+            <!-- Previous / next buttons. d-flex justify-content-between puts one button on each side. -->
+            <section class="toolkit-section">
+                <div class="d-flex justify-content-between">
+                    <a href="html-basics.html" class="btn btn-outline-primary">&larr; HTML</a>
+                    <a href="bootstrap-basics.html" class="btn btn-primary">Next: Bootstrap &rarr;</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="toolkit-footer mt-5">
+            <!-- target="_blank" opens the link in a new tab, and rel="noopener"
+                 stops that new tab from being able to control this page -->
+            <p class="mb-1">Source: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank" rel="noopener">MDN Web Docs</a>. See <a href="resources.html">Resources</a> for all sources.</p>
+            <p class="mb-0">&copy; 2026 Emmanuel Owusu</p>
+        </footer>
+
+        <script>
+            // Copy nav.html into the empty nav-placeholder div at the top of the page.
+            // This way all 6 pages share one navbar, so a menu change only happens in one file.
+            // Note: this needs a web server (like GitHub Pages or VS Code Live Server).
+            // The navbar may not show up if you just double-click the HTML file.
+            $("#nav-placeholder").load("nav.html");
+        </script>
+    </body>
+</html>

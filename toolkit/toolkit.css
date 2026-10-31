@@ -1,0 +1,302 @@
+/* ===== COLORS =====
+   Navy and blue match the portfolio and the Cybersecurity Awareness Hub.
+   The darker blue (#0a58ca) is used for text on light backgrounds because
+   light blue (#00bfff) is hard to read on white. */
+
+/* ===== PAGE ===== */
+body {
+    background-color: #f4f7fb;
+    color: #1b2433;
+}
+
+/* ===== NAVIGATION ===== */
+.toolkit-nav {
+    background-color: #05142d;
+}
+
+.accent-text {
+    color: #00bfff;
+}
+
+.portfolio-link {
+    color: #00bfff !important;
+}
+
+/* ===== HERO SECTION =====
+   Light background with a pattern of small blue dots, like dot-grid notebook
+   paper for sketching out a website. radial-gradient draws one dot, and
+   background-size repeats it every 20px in both directions. */
+.toolkit-hero {
+    background-color: #e8f0fb;
+    background-image: radial-gradient(rgba(10, 88, 202, 0.25) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    border-bottom: 3px solid #0a58ca;
+    color: #1b2433;
+    text-align: center;
+    padding: 60px 16px;
+}
+
+.toolkit-hero h1 {
+    font-weight: bold;
+    color: #05142d;
+}
+
+/* Light blue is too faint on the light hero, so the accent uses the darker blue */
+.toolkit-hero .accent-text {
+    color: #0a58ca;
+}
+
+.toolkit-hero p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.15rem;
+}
+
+/* Small code-style line above the hero heading, like an HTML comment.
+   ".toolkit-hero .hero-tag" is more specific than ".toolkit-hero p" above,
+   so this smaller font size wins. */
+.toolkit-hero .hero-tag {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95rem;
+    color: #0a58ca;
+}
+
+/* ===== SECTIONS ===== */
+.toolkit-section {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 16px 0;
+}
+
+.toolkit-section > h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #05142d;
+    margin-bottom: 24px;
+}
+
+/* Short blue line under each centered section heading */
+.toolkit-section > h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #0a58ca;
+    margin: 10px auto 0;
+}
+
+/* Keeps intro paragraphs from stretching too wide to read comfortably */
+.section-intro {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== CARDS ===== */
+.topic-card {
+    border: 1px solid #d6e0ee;
+    border-top: 5px solid #0a58ca;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(5, 20, 45, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Lift slightly on hover, like the portfolio project cards */
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(5, 20, 45, 0.15);
+}
+
+.topic-icon {
+    font-size: 2.5rem;
+}
+
+/* ===== LEARNING PATH (home page) =====
+   Numbered blue circles for each step */
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #0a58ca;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===== CODE EXAMPLES =====
+   Dark background like the VS Code editor, so code stands out from the
+   lesson text. The label on top shows the file name, like an editor tab. */
+.code-label {
+    background-color: #2d2d3f;
+    color: #c8c8d8;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 8px 8px 0 0;
+}
+
+.code-block {
+    background-color: #1e1e2e;
+    color: #e6e6e6;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9rem;
+    padding: 16px;
+    margin-bottom: 0;
+    border-radius: 0 0 8px 8px;
+    overflow-x: auto; /* long lines scroll sideways instead of breaking the layout */
+}
+
+/* Bootstrap's pink color for short code words in sentences is too light on
+   this page's background, so it is made darker to pass WAVE contrast checks */
+p code,
+li code,
+td code {
+    color: #9c1c5c;
+}
+
+/* ===== LIVE EXAMPLES =====
+   Dashed box around real, working Bootstrap examples */
+.demo-box {
+    background-color: white;
+    border: 2px dashed #0a58ca;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.demo-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0a58ca;
+}
+
+/* Colored boxes inside the grid demo, so each column is easy to see */
+.grid-demo-cell {
+    background-color: #e8f0fb;
+    border: 1px solid #0a58ca;
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85rem;
+}
+
+/* ===== BOX MODEL DIAGRAM (CSS page) =====
+   Four boxes nested inside each other, from the outside in:
+   margin → border → padding → content */
+.bm-margin {
+    background-color: #fff3cd;
+    border: 1px dashed #997404;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.bm-border {
+    background-color: #05142d;
+    padding: 8px;
+}
+
+.bm-padding {
+    background-color: #d1e7dd;
+    padding: 24px;
+}
+
+.bm-content {
+    background-color: #cfe2ff;
+    padding: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.bm-label {
+    display: block;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+/* White label so it shows up on the navy border layer */
+.bm-border > .bm-label {
+    color: white;
+}
+
+/* ===== GIT WORKFLOW (Git page) ===== */
+.flow-step {
+    background-color: white;
+    border: 1px solid #d6e0ee;
+    border-radius: 10px;
+    padding: 16px;
+    height: 100%;
+}
+
+/* Last step is blue to show the code reached GitHub */
+.flow-step-final {
+    border: 2px solid #0a58ca;
+}
+
+.flow-arrow {
+    color: #0a58ca;
+    font-weight: bold;
+}
+
+.flow-arrow code {
+    color: #05142d;
+    font-size: 0.85rem;
+}
+
+/* ===== CHECKLIST (Resources page) ===== */
+.checklist-group {
+    background-color: white;
+    border: 1px solid #d6e0ee;
+    border-top: 5px solid #0a58ca;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.checklist-group .form-check {
+    margin-bottom: 8px;
+}
+
+/* Long URLs wrap onto the next line instead of running off small screens */
+.source-url {
+    color: #0a58ca;
+    overflow-wrap: anywhere;
+}
+
+/* When printing, hide the navbar and footer so only the content prints */
+@media print {
+    #nav-placeholder,
+    .toolkit-footer {
+        display: none;
+    }
+    .toolkit-hero {
+        padding: 16px;
+    }
+}
+
+/* ===== FOOTER ===== */
+.toolkit-footer {
+    background-color: #e8f0fb;
+    border-top: 3px solid #0a58ca;
+    color: #1b2433;
+    text-align: center;
+    padding: 20px 16px;
+}
+
+.toolkit-footer a {
+    color: #0a58ca;
+}
+
+/* Turn off the hover movement for people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    .topic-card {
+        transition: none;
+    }
+    .topic-card:hover {
+        transform: none;
+    }
+}

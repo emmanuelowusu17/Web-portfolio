@@ -112,9 +112,82 @@ The project started as a plan for a cybersecurity course assignment:
 3. **NIST**, *Digital Identity Guidelines (SP 800-63-4)*: https://pages.nist.gov/800-63-4/
 4. **FBI Internet Crime Complaint Center (IC3)**, *2025 Internet Crime Report*: https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf
 
-### Beginner Developer Toolkit *(planned)*
+### Beginner Developer Toolkit
 
-A guide for beginners interested in web development, covering tools such as HTML, CSS, Bootstrap, Git, and GitHub.
+**Live site:** https://emmanuelowusu17.github.io/Web-portfolio/toolkit/
+
+A step-by-step guide for people who are new to software engineering, or who have a passion for building things and want to learn how to make a website. It teaches HTML, CSS, and Bootstrap, plus version control with Git and GitHub, and ends with publishing a real website for free.
+
+#### Purpose
+
+Learning to code can feel overwhelming at the start. There are many tools, and most tutorials assume you already know which one to learn first. This toolkit puts the five core tools in order, explains each one in plain English, and shows real code that beginners can copy and change. The goal is for a complete beginner to go from an empty folder to a live website.
+
+#### The Problem It Solves
+
+- **Beginners don't know where to start.** HTML, CSS, Bootstrap, Git, and GitHub are often taught separately, so it's hard to see how they fit together.
+- **Official documentation is written for developers.** Guides like MDN and the Bootstrap docs are excellent, but they can be a lot for someone on day one.
+- **Version control is often skipped.** Many beginners never learn Git until a job or a class requires it, even though it protects their work from the start.
+- **Publishing seems hard.** Many beginners don't know they can put a website online for free with GitHub Pages.
+
+#### Who It's For
+
+People who are new to software engineering, students, career changers, and anyone with a passion for building websites who doesn't know where to begin. No experience is needed.
+
+#### Benefits
+
+After using the toolkit, a visitor should be able to:
+
+- **Set up the free tools** a web developer uses: VS Code, Live Server, Git, and a GitHub account
+- **Write an HTML page** with headings, paragraphs, links, lists, and images
+- **Style a page with CSS** using selectors, common properties, and the box model
+- **Build a responsive layout** with Bootstrap's grid and components
+- **Use Git and GitHub** to commit changes and push a project online
+- **Publish a website** with GitHub Pages
+
+#### Planning
+
+1. **Identified the need:** beginners struggle to know which tools to learn and in what order.
+2. **Chose the audience:** people new to software engineering or with a passion for building websites.
+3. **Set the goal:** a visitor should be able to build a simple website and publish it with GitHub Pages.
+4. **Chose the format:** a website, so the lessons can show real code and live Bootstrap examples that work on the page.
+5. **Ordered the lessons** like a learning path: HTML → CSS → Bootstrap → Git & GitHub, with each step building on the last.
+6. **Verified the content** against official documentation (listed below).
+7. **Reused the structure** of the Cybersecurity Awareness Hub: a shared navbar, one CSS file, and the same page layout.
+
+#### Pages
+
+| Page | What it teaches |
+|------|-----------------|
+| **Home** | Who it's for, how the tools fit together (explained like building a house), the 4-step learning path, and the free tools to install |
+| **HTML** | What HTML is, the parts of an element, the basic page structure, common tags, a "try it yourself" exercise, good habits, and common mistakes |
+| **CSS** | What CSS is, how to link a stylesheet, the parts of a CSS rule, selectors, common properties, the box model, and a practice stylesheet |
+| **Bootstrap** | How to add Bootstrap, the 12-column grid with a **live resizable example**, breakpoints, live buttons, alerts, and cards next to their code, and utility classes |
+| **Git & GitHub** | Git vs. GitHub, key words, how code moves from your folder to GitHub, one-time setup, the commands for a first project, commit messages, and publishing with GitHub Pages |
+| **Resources** | A printable beginner checklist, practice project ideas, and free sources for further learning |
+
+#### How It Was Built
+
+- **HTML, CSS, and Bootstrap 5.3**, with no custom JavaScript, the same as the Cybersecurity Awareness Hub.
+- **Its own folder:** the site lives in `toolkit/` with its own `nav.html` and `toolkit.css`. `../index.html` links back to the portfolio.
+- **Code examples** use `<pre>` and `<code>` with a dark, editor-style design and a file-name label. Symbols like `<` and `>` are written as `&lt;` and `&gt;` so the browser shows the code instead of running it.
+- **Live examples:** the Bootstrap page includes working grid columns, buttons, alerts, and a card, so visitors see the result next to the code.
+- **A box model diagram** made from four nested `<div>`s styled with CSS, with no image files.
+- **Accessibility:**
+  - high-contrast colors, including a darker color for inline code
+  - `<caption>` and `scope` on tables
+  - `<fieldset>`/`<legend>` for checklist groups
+  - `tabindex="0"` on code blocks, so keyboard users can scroll long lines
+  - decorative emoji hidden from screen readers
+  - reduced motion for users who prefer it
+- **Print-friendly:** an `@media print` rule hides the navbar and footer when the checklist is printed.
+
+#### Sources
+
+1. **MDN Web Docs**, *Learn Web Development*: https://developer.mozilla.org/en-US/docs/Learn_web_development
+2. **Bootstrap**, *Bootstrap 5.3 Documentation*: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+3. **Scott Chacon and Ben Straub**, *Pro Git* (2nd edition): https://git-scm.com/book/en/v2
+4. **GitHub Docs**, *Get Started*: https://docs.github.com/en/get-started
+5. **GitHub Docs**, *GitHub Pages Quickstart*: https://docs.github.com/en/pages/quickstart
 
 ## Project Structure
 
@@ -134,6 +207,15 @@ Web-portfolio/
 │   ├── resources.html   # Checklist, where to report, sources
 │   ├── nav.html         # Navigation bar for the cybersecurity pages
 │   └── cyber.css        # Styles for the cybersecurity pages
+├── toolkit/         # Beginner Developer Toolkit (its own mini-site)
+│   ├── index.html            # Home: who it's for, how the tools fit, learning path, tools to install
+│   ├── html-basics.html      # Step 1: HTML elements, page structure, common tags
+│   ├── css-basics.html       # Step 2: CSS rules, selectors, properties, box model
+│   ├── bootstrap-basics.html # Step 3: Bootstrap grid, live components, utility classes
+│   ├── git-github.html       # Step 4: Git commands, GitHub, publishing with GitHub Pages
+│   ├── resources.html        # Checklist, practice projects, sources
+│   ├── nav.html              # Navigation bar for the toolkit pages
+│   └── toolkit.css           # Styles for the toolkit pages
 └── README.md
 ```
 
@@ -161,7 +243,7 @@ This portfolio will grow as I learn more:
 - [ ] Contact links and a resume
 - [x] Deploy with GitHub Pages
 - [x] Build the Cybersecurity Awareness Hub
-- [ ] Build the Beginner Developer Toolkit
+- [x] Build the Beginner Developer Toolkit
 - [ ] **JavaScript:** dark/light mode toggle, active page highlighting, contact form, and a phishing quiz and saved checklist for the Cybersecurity Awareness Hub
 - [ ] **Python:** add Python and AI projects
 

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learn HTML | Beginner Developer Toolkit</title>
+        <!-- utf-8 lets emoji and special symbols display correctly -->
+        <meta charset="utf-8">
+        <!-- Makes the page fit the width of phone screens instead of zooming out -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Using bootstrap 5 framework-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS for the toolkit site -->
+        <link rel="stylesheet" href="toolkit.css">
+
+        <!-- Bootstrap's JavaScript runs the interactive parts, like the mobile menu button -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery is used at the bottom of the page to load the shared navbar -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <!-- d-flex, flex-column, and min-vh-100 make the body at least as tall as the screen,
+         so the footer stays at the bottom even when a page is short -->
+    <body class="d-flex flex-column min-vh-100">
+        <!-- Empty box that the navbar from nav.html gets loaded into (see the script at the bottom) -->
+        <div id="nav-placeholder"></div>
+
+        <!-- flex-grow-1 lets the main content stretch to fill extra space, pushing the footer down -->
+        <main class="flex-grow-1">
+            <!-- Hero Section -->
+            <section class="toolkit-hero">
+                <p class="hero-tag">Step 1 of 4</p>
+                <h1>Learn <span class="accent-text">HTML</span></h1>
+                <p>HTML is the language that builds the structure of every web page you visit.</p>
+            </section>
+
+            <!-- What Is HTML -->
+            <section class="toolkit-section">
+                <h2>What Is HTML?</h2>
+                <p class="section-intro">
+                    HTML stands for <strong>HyperText Markup Language</strong>. It isn't a programming
+                    language that does math or makes decisions. Instead, it <strong>marks up</strong>
+                    your content, telling the browser "this is a heading," "this is a paragraph," or
+                    "this is a link." You write HTML in a plain text file that ends in
+                    <code>.html</code>, and the browser turns it into a web page.
+                </p>
+            </section>
+
+            <!-- Anatomy of an Element.
+                 CODE EXAMPLES: <pre> keeps the spaces and line breaks exactly as typed,
+                 and <code> marks the text as code. Inside them, &lt; and &gt; are codes
+                 for the less-than and greater-than symbols. If you typed the symbols directly,
+                 the browser would treat the example as real HTML instead of showing it.
+                 tabindex="0" lets keyboard users reach the box and scroll long lines sideways. -->
+            <section class="toolkit-section">
+                <h2>The Parts of an HTML Element</h2>
+                <p class="section-intro text-center">
+                    An <strong>element</strong> is one piece of a page, like a link. Most elements
+                    have an opening tag, content, and a closing tag.
+                </p>
+                <div class="code-label">example.html</div>
+                <pre class="code-block" tabindex="0"><code>&lt;a href="https://github.com"&gt;Visit GitHub&lt;/a&gt;</code></pre>
+
+                <div class="table-responsive mt-3">
+                    <table class="table table-bordered bg-white align-middle">
+                        <caption>Each part of the link element above.</caption>
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Part</th>
+                                <th scope="col">In the example</th>
+                                <th scope="col">What it does</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Opening tag</td>
+                                <td><code>&lt;a ...&gt;</code></td>
+                                <td>Starts the element. <code>a</code> stands for "anchor," which means a link.</td>
+                            </tr>
+                            <tr>
+                                <td>Attribute</td>
+                                <td><code>href="https://github.com"</code></td>
+                                <td>Adds extra information. <code>href</code> is where the link goes.</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td><code>Visit GitHub</code></td>
+                                <td>What the visitor sees and clicks.</td>
+                            </tr>
+                            <tr>
+                                <td>Closing tag</td>
+                                <td><code>&lt;/a&gt;</code></td>
+                                <td>Ends the element. It has a slash (<code>/</code>) before the name.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Page Skeleton -->
+            <section class="toolkit-section">
+                <h2>The Basic Page Structure</h2>
+                <p class="section-intro text-center">
+                    Every HTML page starts with the same skeleton. Copy it to start any new page.
+                </p>
+                <!-- col-lg-7 + col-lg-5 = 12, so the code and its explanation
+                     sit side by side on large screens and stack on smaller ones -->
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="code-label">index.html</div>
+<pre class="code-block" tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+        &lt;title&gt;My First Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;p&gt;This is my first web page.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <!-- The <pre> above starts at the left edge on purpose: anything before
+                             its first line of code would show up as extra spaces -->
+                    </div>
+                    <div class="col-lg-5">
+                        <ol class="mb-0">
+                            <li class="mb-2"><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is a modern HTML page.</li>
+                            <li class="mb-2"><code>&lt;html lang="en"&gt;</code> wraps the whole page. <code>lang="en"</code> says it's in English, which helps screen readers.</li>
+                            <li class="mb-2"><code>&lt;head&gt;</code> holds information <em>about</em> the page that visitors don't see on the page itself.</li>
+                            <li class="mb-2"><code>&lt;title&gt;</code> is the name shown on the browser tab.</li>
+                            <li><code>&lt;body&gt;</code> holds everything visitors see: text, images, and links.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Tags.
+                 table-responsive lets the table scroll sideways on small screens instead of squishing.
+                 The caption describes the table, and scope="col" tells screen readers
+                 that each header labels the column below it. -->
+            <section class="toolkit-section">
+                <h2>Common HTML Tags</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered bg-white align-middle">
+                        <caption>You'll use these tags on almost every page you build.</caption>
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Tag</th>
+                                <th scope="col">What it's for</th>
+                                <th scope="col">Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td>
+                                <td>Headings, from most important (h1) to least important (h6)</td>
+                                <td><code>&lt;h1&gt;My Portfolio&lt;/h1&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;p&gt;</code></td>
+                                <td>A paragraph of text</td>
+                                <td><code>&lt;p&gt;Hi, I'm a student.&lt;/p&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;a&gt;</code></td>
+                                <td>A link to another page</td>
+                                <td><code>&lt;a href="about.html"&gt;About&lt;/a&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;img&gt;</code></td>
+                                <td>An image. It has no closing tag. <code>alt</code> describes the image for people who can't see it.</td>
+                                <td><code>&lt;img src="me.jpg" alt="Photo of me"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></td>
+                                <td>A bulleted list, a numbered list, and the items inside them</td>
+                                <td><code>&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;/ul&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;div&gt;</code></td>
+                                <td>A general box for grouping other elements, often for styling</td>
+                                <td><code>&lt;div class="card"&gt;...&lt;/div&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></td>
+                                <td>Named areas of the page. Called <strong>semantic</strong> tags because their names describe their meaning.</td>
+                                <td><code>&lt;footer&gt;&amp;copy; 2026&lt;/footer&gt;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Try It Yourself. Numbered steps in a Bootstrap card. -->
+            <section class="toolkit-section">
+                <h2>Try It Yourself</h2>
+                <div class="card topic-card">
+                    <div class="card-body">
+                        <ol class="mb-0">
+                            <li class="mb-2">Make a new folder on your computer called <code>my-first-site</code>.</li>
+                            <li class="mb-2">Open VS Code, then choose <strong>File &gt; Open Folder</strong> and pick that folder.</li>
+                            <li class="mb-2">Create a new file called <code>index.html</code>. The home page of a website is usually named this.</li>
+                            <li class="mb-2">Type <code>!</code> and press <kbd>Enter</kbd>. VS Code fills in the whole page skeleton for you.</li>
+                            <li class="mb-2">Inside <code>&lt;body&gt;</code>, add an <code>&lt;h1&gt;</code> with your name and a <code>&lt;p&gt;</code> about yourself.</li>
+                            <li>Right-click the file and choose <strong>Open with Live Server</strong> to see your page in the browser.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips and Common Mistakes: 2 cards, half the width each (col-md-6).
+                 The headings are h2 for page structure, but class="h4" makes them look smaller. -->
+            <section class="toolkit-section">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <h2 class="h4">Good Habits</h2>
+                                <ul class="mb-0">
+                                    <li class="mb-2">Use only one <code>&lt;h1&gt;</code> per page, and keep headings in order (h1, then h2, then h3).</li>
+                                    <li class="mb-2">Give every image an <code>alt</code> description.</li>
+                                    <li class="mb-2">Indent elements that sit inside other elements, so the structure is easy to read.</li>
+                                    <li>Leave notes with comments: <code>&lt;!-- like this --&gt;</code>. Browsers don't show them.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <h2 class="h4">Common Mistakes</h2>
+                                <ul class="mb-0">
+                                    <li class="mb-2"><strong>Forgetting a closing tag.</strong> A missing <code>&lt;/p&gt;</code> or <code>&lt;/div&gt;</code> can break the layout below it.</li>
+                                    <li class="mb-2"><strong>Missing quotes.</strong> Attribute values go in quotes: <code>href="about.html"</code>.</li>
+                                    <li class="mb-2"><strong>Wrong file path.</strong> If an image doesn't show, check the spelling and the folder in <code>src</code>.</li>
+                                    <li><strong>Not saving.</strong> The browser only shows the last version you saved.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next step button. d-flex justify-content-between puts one button on each side. -->
+            <section class="toolkit-section">
+                <div class="d-flex justify-content-between">
+                    <a href="index.html" class="btn btn-outline-primary">&larr; Home</a>
+                    <a href="css-basics.html" class="btn btn-primary">Next: CSS &rarr;</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="toolkit-footer mt-5">
+            <!-- target="_blank" opens the link in a new tab, and rel="noopener"
+                 stops that new tab from being able to control this page -->
+            <p class="mb-1">Source: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank" rel="noopener">MDN Web Docs</a>. See <a href="resources.html">Resources</a> for all sources.</p>
+            <p class="mb-0">&copy; 2026 Emmanuel Owusu</p>
+        </footer>
+
+        <script>
+            // Copy nav.html into the empty nav-placeholder div at the top of the page.
+            // This way all 6 pages share one navbar, so a menu change only happens in one file.
+            // Note: this needs a web server (like GitHub Pages or VS Code Live Server).
+            // The navbar may not show up if you just double-click the HTML file.
+            $("#nav-placeholder").load("nav.html");
+        </script>
+    </body>
+</html>

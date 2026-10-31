@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learn Git &amp; GitHub | Beginner Developer Toolkit</title>
+        <!-- utf-8 lets emoji and special symbols display correctly -->
+        <meta charset="utf-8">
+        <!-- Makes the page fit the width of phone screens instead of zooming out -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Using bootstrap 5 framework-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS for the toolkit site -->
+        <link rel="stylesheet" href="toolkit.css">
+
+        <!-- Bootstrap's JavaScript runs the interactive parts, like the mobile menu button -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jQuery is used at the bottom of the page to load the shared navbar -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <!-- d-flex, flex-column, and min-vh-100 make the body at least as tall as the screen,
+         so the footer stays at the bottom even when a page is short -->
+    <body class="d-flex flex-column min-vh-100">
+        <!-- Empty box that the navbar from nav.html gets loaded into (see the script at the bottom) -->
+        <div id="nav-placeholder"></div>
+
+        <!-- flex-grow-1 lets the main content stretch to fill extra space, pushing the footer down -->
+        <main class="flex-grow-1">
+            <!-- Hero Section -->
+            <section class="toolkit-hero">
+                <p class="hero-tag">Step 4 of 4</p>
+                <h1>Save and Share with <span class="accent-text">Git &amp; GitHub</span></h1>
+                <p>Git saves every version of your project. GitHub puts it online, where you can share it and publish it as a real website.</p>
+            </section>
+
+            <!-- Git vs GitHub: 2 cards, half the width each (col-md-6).
+                 aria-hidden="true" hides the decorative emoji from screen readers. -->
+            <section class="toolkit-section">
+                <h2>Git vs. GitHub</h2>
+                <p class="section-intro text-center">They sound alike, but they're two different things that work together.</p>
+                <div class="row g-4 text-center">
+                    <div class="col-md-6">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <span class="topic-icon" aria-hidden="true">💻</span>
+                                <h3 class="h4">Git</h3>
+                                <p class="mb-0">
+                                    A <strong>version control</strong> tool that runs on your computer. Each time
+                                    you finish a change, Git saves a snapshot called a <strong>commit</strong>.
+                                    If something breaks, you can go back to an earlier version.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <span class="topic-icon" aria-hidden="true">☁️</span>
+                                <h3 class="h4">GitHub</h3>
+                                <p class="mb-0">
+                                    A website that stores your Git projects online. It works as a backup,
+                                    lets other people see and work on your code, and can host your
+                                    site for free with <strong>GitHub Pages</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Words.
+                 table-responsive lets the table scroll sideways on small screens instead of squishing.
+                 The caption describes the table, and scope="col" tells screen readers
+                 that each header labels the column below it. -->
+            <section class="toolkit-section">
+                <h2>Words to Know</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered bg-white align-middle">
+                        <caption>You'll see these words every time you use Git and GitHub.</caption>
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Word</th>
+                                <th scope="col">What it means</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Repository</strong> (repo)</td>
+                                <td>A project folder that Git is tracking, along with its full history of changes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Commit</strong></td>
+                                <td>A saved snapshot of your project, with a short message describing what changed</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Branch</strong></td>
+                                <td>A separate line of work. The main one is usually called <code>main</code>.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Push</strong></td>
+                                <td>Send your commits from your computer up to GitHub</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pull</strong></td>
+                                <td>Bring the newest commits from GitHub down to your computer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clone</strong></td>
+                                <td>Download a full copy of a repository from GitHub to your computer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- How Git Works: a 4-step flow with arrows between the steps.
+                 col-lg boxes share the space evenly, and col-lg-auto columns are only
+                 as wide as the arrow inside them. align-items-center lines them up vertically. -->
+            <section class="toolkit-section">
+                <h2>How Your Code Gets to GitHub</h2>
+                <div class="row g-3 align-items-center text-center">
+                    <div class="col-lg">
+                        <div class="flow-step">
+                            <h3 class="h6">Working folder</h3>
+                            <p class="small mb-0">The files you edit in VS Code</p>
+                        </div>
+                    </div>
+                    <!-- Two arrows, only one shows at a time: d-none d-lg-inline shows the right arrow
+                         on wide screens, and d-lg-none shows the down arrow when the steps stack.
+                         The command name under each arrow is the command that does that step. -->
+                    <div class="col-lg-auto flow-arrow">
+                        <span class="d-none d-lg-inline" aria-hidden="true">&rarr;</span>
+                        <span class="d-lg-none" aria-hidden="true">&darr;</span>
+                        <div><code>git add</code></div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="flow-step">
+                            <h3 class="h6">Staging area</h3>
+                            <p class="small mb-0">The changes you picked to save next</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-auto flow-arrow">
+                        <span class="d-none d-lg-inline" aria-hidden="true">&rarr;</span>
+                        <span class="d-lg-none" aria-hidden="true">&darr;</span>
+                        <div><code>git commit</code></div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="flow-step">
+                            <h3 class="h6">Local repository</h3>
+                            <p class="small mb-0">Saved snapshots on your computer</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-auto flow-arrow">
+                        <span class="d-none d-lg-inline" aria-hidden="true">&rarr;</span>
+                        <span class="d-lg-none" aria-hidden="true">&darr;</span>
+                        <div><code>git push</code></div>
+                    </div>
+                    <div class="col-lg">
+                        <!-- flow-step-final gives the last step a blue border (see toolkit.css) -->
+                        <div class="flow-step flow-step-final">
+                            <h3 class="h6">GitHub</h3>
+                            <p class="small mb-0">Your online copy that others can see</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- One-time Setup.
+                 CODE EXAMPLES: <pre> keeps the spaces and line breaks exactly as typed.
+                 tabindex="0" lets keyboard users reach the box and scroll long lines sideways. -->
+            <section class="toolkit-section">
+                <h2>One-Time Setup</h2>
+                <p class="section-intro text-center">
+                    After installing Git, open a terminal (in VS Code: <strong>Terminal &gt; New Terminal</strong>)
+                    and tell Git who you are. Use the same email as your GitHub account.
+                </p>
+                <div class="code-label">Terminal</div>
+<pre class="code-block" tabindex="0"><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+                <!-- The <pre> above starts at the left edge on purpose: anything before
+                     its first line of code would show up as extra spaces -->
+            </section>
+
+            <!-- First Project: the commands to put a new project on GitHub.
+                 Lines that start with # are comments in the terminal, so the terminal skips them. -->
+            <section class="toolkit-section">
+                <h2>Put Your First Project on GitHub</h2>
+                <ol class="section-intro">
+                    <li class="mb-2">On GitHub, click <strong>New</strong> to create a repository. Give it a name, like <code>my-first-site</code>, and click <strong>Create repository</strong>.</li>
+                    <li class="mb-2">Copy the repository's web address. It looks like <code>https://github.com/your-username/my-first-site.git</code>.</li>
+                    <li>In VS Code, open your project folder, open the terminal, and run these commands one at a time:</li>
+                </ol>
+                <div class="code-label">Terminal</div>
+<pre class="code-block" tabindex="0"><code># Start tracking this folder with Git (only once per project)
+git init
+
+# See which files changed
+git status
+
+# Stage all your changes (the dot means "everything in this folder")
+git add .
+
+# Save a snapshot with a message that describes the change
+git commit -m "Add home page"
+
+# Name your main branch "main"
+git branch -M main
+
+# Connect your folder to the GitHub repository (paste your own address)
+git remote add origin https://github.com/your-username/my-first-site.git
+
+# Upload your commits to GitHub (-u remembers where to push next time)
+git push -u origin main</code></pre>
+            </section>
+
+            <!-- Everyday Workflow + Commit Messages: 2 cards, half the width each (col-md-6).
+                 The headings are h2 for page structure, but class="h4" makes them look smaller. -->
+            <section class="toolkit-section">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <h2 class="h4">Your Everyday Routine</h2>
+                                <p>After the first push, every change follows the same 4 steps:</p>
+                                <ol class="mb-0">
+                                    <li class="mb-2">Edit your files and save them.</li>
+                                    <li class="mb-2"><code>git add .</code> to stage the changes.</li>
+                                    <li class="mb-2"><code>git commit -m "Describe the change"</code> to save a snapshot.</li>
+                                    <li><code>git push</code> to upload it to GitHub.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card topic-card h-100">
+                            <div class="card-body">
+                                <h2 class="h4">Write Good Commit Messages</h2>
+                                <p>A good message tells your future self what changed. Start with a verb.</p>
+                                <!-- Bootstrap badges: text-bg-success is green, text-bg-danger is red -->
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><span class="badge text-bg-success">Good</span> <code>Add contact form to about page</code></li>
+                                    <li class="mb-2"><span class="badge text-bg-success">Good</span> <code>Fix broken image link on home page</code></li>
+                                    <li class="mb-2"><span class="badge text-bg-danger">Bad</span> <code>stuff</code></li>
+                                    <li><span class="badge text-bg-danger">Bad</span> <code>changes</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publish with GitHub Pages -->
+            <section class="toolkit-section">
+                <h2>Publish Your Site with GitHub Pages</h2>
+                <p class="section-intro text-center">
+                    GitHub Pages turns your repository into a live website for free. This toolkit is hosted the same way.
+                </p>
+                <div class="card topic-card">
+                    <div class="card-body">
+                        <ol class="mb-0">
+                            <li class="mb-2">On GitHub, open your repository and click <strong>Settings</strong>.</li>
+                            <li class="mb-2">In the left menu, click <strong>Pages</strong>.</li>
+                            <li class="mb-2">Under <strong>Build and deployment</strong>, set the source to <strong>Deploy from a branch</strong>.</li>
+                            <li class="mb-2">Choose the <code>main</code> branch and the <code>/ (root)</code> folder, then click <strong>Save</strong>.</li>
+                            <li>Wait a few minutes (it can take up to 10). Your site will be live at <code>https://your-username.github.io/my-first-site/</code>.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VS Code tip. alert-info is Bootstrap's light blue message box. -->
+            <section class="toolkit-section">
+                <div class="alert alert-info mb-0">
+                    <strong>Prefer buttons over typing?</strong> VS Code has a <strong>Source Control</strong>
+                    panel on the left side. It can stage, commit, and push with clicks. Learning the
+                    commands first helps you understand what those buttons are doing.
+                </div>
+            </section>
+
+            <!-- Previous / next buttons. d-flex justify-content-between puts one button on each side. -->
+            <section class="toolkit-section">
+                <div class="d-flex justify-content-between">
+                    <a href="bootstrap-basics.html" class="btn btn-outline-primary">&larr; Bootstrap</a>
+                    <a href="resources.html" class="btn btn-primary">Next: Resources &rarr;</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="toolkit-footer mt-5">
+            <!-- target="_blank" opens the link in a new tab, and rel="noopener"
+                 stops that new tab from being able to control this page -->
+            <p class="mb-1">Sources: <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git</a> and <a href="https://docs.github.com/en/get-started" target="_blank" rel="noopener">GitHub Docs</a>. See <a href="resources.html">Resources</a> for all sources.</p>
+            <p class="mb-0">&copy; 2026 Emmanuel Owusu</p>
+        </footer>
+
+        <script>
+            // Copy nav.html into the empty nav-placeholder div at the top of the page.
+            // This way all 6 pages share one navbar, so a menu change only happens in one file.
+            // Note: this needs a web server (like GitHub Pages or VS Code Live Server).
+            // The navbar may not show up if you just double-click the HTML file.
+            $("#nav-placeholder").load("nav.html");
+        </script>
+    </body>
+</html>
