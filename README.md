@@ -9,6 +9,7 @@ My personal portfolio website, built as part of a Web Development Fundamentals c
 - **HTML5** – page structure
 - **CSS3** – custom styling (`style.css`)
 - **Bootstrap 5.3** – responsive grid, cards, buttons, and navbar
+- **Bootstrap Icons** – email, GitHub, and LinkedIn icons
 - **jQuery** – loads the shared navigation bar into each page
 - **Git & GitHub** – version control
 
@@ -16,9 +17,10 @@ My personal portfolio website, built as part of a Web Development Fundamentals c
 
 | Page | Description |
 |------|-------------|
-| **Home** (`index.html`) | Intro section with my photo and short bio, a skills section, and featured projects |
+| **Home** (`index.html`) | Intro section with my photo, short bio, contact links, a skills section, and featured projects |
 | **Projects** (`projects.html`) | Details about each project I'm working on |
 | **About** (`about.html`) | My background, my CS journey, what I'm currently learning, and my career goals |
+| **Contact** (`contact.html`) | Ways to reach me: email, GitHub, and LinkedIn |
 
 ## Projects
 
@@ -196,6 +198,7 @@ Web-portfolio/
 ├── index.html       # Home page
 ├── projects.html    # Projects page
 ├── about.html       # About page
+├── contact.html     # Contact page
 ├── nav.html         # Shared navigation bar, loaded into every page
 ├── style.css        # Custom styles
 ├── images/          # Profile photo, skill logos, project images, background
@@ -240,7 +243,8 @@ Web-portfolio/
 
 This portfolio will grow as I learn more:
 
-- [ ] Contact links and a resume
+- [x] Contact links (email, GitHub, LinkedIn)
+- [ ] Resume
 - [x] Deploy with GitHub Pages
 - [x] Build the Cybersecurity Awareness Hub
 - [x] Build the Beginner Developer Toolkit
@@ -252,3 +256,4 @@ This portfolio will grow as I learn more:
 **Emmanuel Junior Owusu**
 Computer Science Student at MSU Denver
 GitHub: [@emmanuelowusu17](https://github.com/emmanuelowusu17)
+LinkedIn: [Emmanuel Owusu](https://www.linkedin.com/in/emmanuel-owusu-128698404)

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contact | Emmanuel Owusu</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Get in touch with Emmanuel Owusu, a Computer Science student at MSU Denver.">
+
+        <!-- Using bootstrap 5 framework-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons for the email, GitHub, and LinkedIn icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+        <!-- My custom CSS -->
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <div id="nav-placeholder"></div>
+        <main class="container my-4 portfolio-container flex-grow-1">
+            <h1 class="text-center section-title mt-5">Get in <span class="blue-text">Touch</span></h1>
+            <p class="section-title contact-intro">
+                I'm open to internships, collaborations, and conversations about web development, software engineering, and AI. The best way to reach me is by email.
+            </p>
+
+            <div class="row g-4 px-3 px-sm-5 contact-row justify-content-center">
+                <!-- Email -->
+                <div class="col-md-6">
+                    <a href="mailto:oemmanuel17@outlook.com" class="card contact-card h-100">
+                        <i class="bi bi-envelope-fill contact-icon" aria-hidden="true"></i>
+                        <h2>Email</h2>
+                        <p>oemmanuel17@outlook.com</p>
+                    </a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="col-md-6">
+                    <a href="https://github.com/emmanuelowusu17" class="card contact-card h-100" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github contact-icon" aria-hidden="true"></i>
+                        <h2>GitHub</h2>
+                        <p>@emmanuelowusu17</p>
+                    </a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="col-md-6">
+                    <a href="https://www.linkedin.com/in/emmanuel-owusu-128698404" class="card contact-card h-100" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-linkedin contact-icon" aria-hidden="true"></i>
+                        <h2>LinkedIn</h2>
+                        <p>Connect with me</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer text-center mt-5">
+            <div class="social-links">
+                <a href="mailto:oemmanuel17@outlook.com" aria-label="Email Emmanuel"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
+                <a href="https://github.com/emmanuelowusu17" target="_blank" rel="noopener noreferrer" aria-label="Emmanuel's GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/emmanuel-owusu-128698404" target="_blank" rel="noopener noreferrer" aria-label="Emmanuel's LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            </div>
+            <p>&copy; 2026 Emmanuel Owusu</p>
+        </footer>
+
+        <script>
+            $("#nav-placeholder").load("nav.html");
+        </script>
+    </body>
+</html>
